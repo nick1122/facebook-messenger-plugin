@@ -1,0 +1,54 @@
+#ocx-facebook-message {
+	position: relative;	
+}
+
+#ocx-facebook-message-header {
+	position: fixed;
+	z-index: 99999;
+}
+
+#ocx-facebook-message-chat {
+	position: absolute;
+	top: -100000px;
+	z-index: 99999;
+}
+
+.fbm-bottom-left {
+	position: fixed !important;
+	top: auto !important;
+	bottom: 0px;
+	left: 25px;
+}
+
+.fbm-bottom-right {
+	position: fixed !important; 
+	top: auto !important;
+	bottom: 0px;
+	right: 25px;
+}
+
+#ocx-facebook-message-header .fbm-header-default {
+	background-color: #3b5998;
+}
+
+#ocx-facebook-message-header a.fbm-icon {
+	background: url('../image/facebook-message/facebook-messenger-small.png') center 0 no-repeat;
+	padding: 60px;
+	cursor: pointer;
+}
+
+#ocx-facebook-message-header a.fbm-default {
+	background: #FFF;
+	border: 1px solid #DDDDDD;
+	border-bottom: none;
+	padding: 5px 15px;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	color: #666;
+	cursor: pointer;
+	display: block;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" type="text/css" href="css/stylesheet/animate.css">
+<link rel="stylesheet" type="text/css" href="css/stylesheet/facebook_message.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Facebook Message imbed</h1>
+<p>Input your facebook app_ID first</p>
+<div id="ocx-facebook-message" class="wait-fbm-bottom-right">
+	<div id="ocx-facebook-message-header" class="fbm-bottom-right animated slideInUp">
+
+		<a class="fbm-icon fbm-trigger" data-toggle="tooltip" title="Message"></a>
+
+	</div>
+
+	<div id="ocx-facebook-message-chat">
+		<div class="fb-page" data-href="https://www.facebook.com/vetrump" data-tabs="messages" data-width="550px" data-height="550px" data-adapt-container-width="false" data-small-header="true" data-hide-cover="false" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/vetrump"><a href="https://www.facebook.com/vetrump">Store Name</a></blockquote></div></div>
+	</div>
+</div>
+</body>
+<script>
+$(document).ready(function(){
+	$('body').prepend('<div id="fb-root"></div>');
+
+
+
+	$('body').on('click', function(e){
+		if ($(e.target).hasClass('fbm-trigger')) {
+			FBMShowMessageArea();
+		} else if ($('#ocx-facebook-message-chat').hasClass('fbm-opened')) {
+			FBMHideMessageA
+      rea();
+		}
+	});
+});
+
+function FBMShowMessageArea() {
+	var display_position = $('#ocx-facebook-message').attr('class').replace('wait-', '');
+
+	$('#ocx-facebook-message #ocx-facebook-message-icon').hide();
+	$('#ocx-facebook-message #ocx-facebook-message-chat').addClass('fbm-opened ' + display_position);
+}
+
+function FBMHideMessageArea() {
+	var display_position = $('#ocx-facebook-message').attr('class').replace('wait-', '');
+
+	$('#ocx-facebook-message #ocx-facebook-message-icon').show();
+	$('#ocx-facebook-message #ocx-facebook-message-chat').removeClass('fbm-opened').removeClass(display_position);
+}
+// window.fbAsyncInit = function() {
+// 	FB.init({
+// 		appId      : <<app_ID>>,
+// 		status     : true,
+// 		cookie     : true,
+// 		xfbml      : true
+// 	});
+// };
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : <<app_ID>>,
+    xfbml      : true,
+    version    : 'v2.8'
+  });
+
+};
+
+// Load the SDK Asynchronously
+(function(d){
+	var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+	js = d.createElement('script'); js.id = id; js.async = true;
+	js.src = "//connect.facebook.net/zh_TW/all.js";
+	d.getElementsByTagName('head')[0].appendChild(js);
+}(document));
+
+$(document).ready(function(){
+	$('#ocx-facebook-message-chat').css({'width': '550px', 'height': '550px'});
+
+
+	$('#ocx-facebook-message-header').css({'width': '550px'});
+
+});
+</script>
+</html>
